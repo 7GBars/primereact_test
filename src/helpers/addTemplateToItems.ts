@@ -2,16 +2,17 @@ import {MenuItem} from "primereact/menuitem";
 import {JSX} from "react";
 import React from "react";
 import {ReactNode} from "react";
+import {TMyMenuItemData} from "../components/TieredMenu/types";
+import {MenuItemOptions} from "primereact/menuitem";
 
-export const addTemplateToItems = (items: MenuItem[] | undefined, itemTemplate: (item: MenuItem) => ReactNode) => {
+export const addTemplateToItems = (items: MenuItem[] | undefined, itemTemplate: (item: TMyMenuItemData, options: MenuItemOptions) => ReactNode) => {
   if(!items) return [];
   items.forEach(item => {
-    // Добавляем свойство template к текущему элементу
-    item.template = itemTemplate;
 
-    // Если у элемента есть вложенные items, рекурсивно вызываем эту же функцию для них
+    item.template = itemTemplate as ReactNode | ((item: MenuItem, options: MenuItemOptions) => ReactNode);
     if (item.items) {
       addTemplateToItems(item.items as MenuItem[], itemTemplate);
     }
+
   });
 };

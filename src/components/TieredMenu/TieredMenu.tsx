@@ -7,6 +7,7 @@ import arrow from '../../assets/header-desktop-submenu-arrow__hover-on.svg'
 import {addTemplateToItems} from "../../helpers/index";
 import {TieredMenuItemTemplate} from "./TieredMenuItemTemplate";
 
+
 type TieredMenuProps = {
   model: MenuItem[] | undefined;
   instanceRefObject: LegacyRef<TieredMenu> | null;
@@ -16,8 +17,7 @@ type TieredMenuProps = {
 
 export const TieredMenuTest: FC<TieredMenuProps> = ({model, instanceRefObject, isPopupMode}) => {
 
-  addTemplateToItems(model, TieredMenuItemTemplate)
-
+  addTemplateToItems(model, TieredMenuItemTemplate);
 
   return (<>
     <TieredMenu ref={instanceRefObject} popup model={model} breakpoint="767px"/>

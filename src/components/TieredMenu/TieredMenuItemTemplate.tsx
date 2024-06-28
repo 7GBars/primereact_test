@@ -1,14 +1,12 @@
-import React, {FC} from 'react';
-import {MenuItem} from "primereact/menuitem";
-import {Badge} from "primereact/badge";
+import React from 'react';
 
-type TieredMenuItemTemplateProps = {
-  item: MenuItem & { shortcut: string, badge: number };
-};
+import {TMyMenuItemData} from "./types";
 
-export const TieredMenuItemTemplate = (item: any) => (
+export const TieredMenuItemTemplate = (itemData: TMyMenuItemData) => (
   <div className={'item-container'}>
-      as
+    <div className={'item-container__icon'}>{itemData.icon}</div>
+    <div className={'item-container__text'}>{itemData.label}</div>
+    <div className={'item-container__arrow-icon'}></div>
   </div>
 );
 
