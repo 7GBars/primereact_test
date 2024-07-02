@@ -20,7 +20,7 @@ export const TieredMenuTest: FC<TieredMenuProps> = ({model, instanceRefObject, i
   addTemplateToItems(model, TieredMenuItemTemplate);
 
   return (<>
-    <TieredMenu ref={instanceRefObject} popup model={model} breakpoint="767px"/>
+    <TieredMenu style={{width: 234}} ref={instanceRefObject} popup model={model}/>
   </>);
 };
 

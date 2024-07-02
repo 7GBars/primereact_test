@@ -1,0 +1,49 @@
+
+
+.item-container {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 234px;
+  height: 40px;
+  padding: 10px;
+  background-color: #0a55e0;
+  .item-container__item-data {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.item-container {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  width: 234px;
+  padding: 5px 10px;
+  align-items: flex-start;
+  gap: 10px;
+  background: #2F2F2F;
+  color: #FFFFFF;
+  z-index: 1; /* Добавляем положительный z-index */
+}
+
+.item-container::before {
+  content: '';
+  position: absolute;
+  top: 5px; /* Отступ сверху */
+  left: 5px; /* Отступ слева */
+  right: 5px; /* Отступ справа */
+  bottom: 5px; /* Отступ снизу */
+  background-color: #888888;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1; /* Задаем отрицательный z-index */
+}
+
+.item-container:hover::before {
+  opacity: 1;
+}
