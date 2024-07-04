@@ -1,4 +1,4 @@
-$primary-font: 'Open Sans', sans-serif;
+$primary-font: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $secondary-font: 'Roboto', sans-serif;
 
 /* Подключение шрифтов через внешние ссылки */
@@ -9,6 +9,7 @@ $secondary-font: 'Roboto', sans-serif;
 body {
   font-family: $primary-font;
   font-size: 10px;
+  color: green;
 }
 
 h1, h2, h3, h4, h5, h6 {

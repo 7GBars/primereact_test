@@ -18,6 +18,7 @@ function App() {
       <Button label="Show" onClick={(e) => tieredMenuInstance.current?.toggle(e)}/>
       <TieredMenuTest model={items} instanceRefObject={tieredMenuInstance}/>
       <h1>2</h1>
+      <p>dome text</p>
     </div>
   );
 }
