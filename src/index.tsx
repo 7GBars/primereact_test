@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import 'primeflex/primeflex.css';
-import './styles/generated/theme.css';
+import './css/theme-light.css';
 import 'primeicons/primeicons.css';
 
 const root = ReactDOM.createRoot(
