@@ -24,7 +24,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "generateMyTheme": "cd src/themes/mytheme && sass --no-source-map --update theme.scss:theme.css",
+    "moveTheme": "move src\\styles\\themes\\mytheme\\theme.css src\\css\\theme.css",
+    "buildTheme": "npm run generateMyTheme && npm run moveTheme"
   },
   "eslintConfig": {
     "extends": [
