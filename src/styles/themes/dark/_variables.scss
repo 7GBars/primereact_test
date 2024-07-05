@@ -1,25 +1,19 @@
-$primaryColor: #b7f165;
-$primaryDarkColor: #b7f165;
-$primaryDarkerColor: #b7f165;
-$primaryTextColor: #1b1c1c;
+@import './fonts';
+
+$primaryColor: #61B83A;
+$primaryDarkColor: #61B83A;
+$primaryDarkerColor: #61B83A;
+$primaryTextColor: #{$primaryTextColor};
 
 $colors: (
-    "blue": #2196F3,
-    "green": #4caf50,
-    "yellow": #FBC02D,
-    "cyan": #00BCD4,
-    "pink": #E91E63,
-    "indigo": #3F51B5,
-    "teal": #009688,
-    "orange": #F57C00,
-    "bluegray": #607D8B,
-    "purple": #9C27B0,
-    "red": #FF4032,
+    "blue": #74A9F7,
+    "green": #61B83A,
+    "indigo": #9EA7FE,
+    "red": #C46F54,
     "primary": $primaryColor
 );
 
 // Mandatory Designer Variables
-@import "./fonts";
 @import './variables/general';
 @import './variables/form';
 @import './variables/button';
@@ -32,18 +26,18 @@ $colors: (
 @import './variables/_misc';
 
 :root {
-    font-family: #{$primary-font};
-    --font-family: #{$primary-font};
-    --surface-a:#ffffff;
-    --surface-b:#f8f9fa;
-    --surface-c:#e9ecef;
-    --surface-d:#dee2e6;
-    --surface-e:#ffffff;
-    --surface-f:#ffffff;
-    --text-color: #{$primaryTextColor};
-    --text-color-secondary:#6c757d;
-    --primary-color:#2196F3;
-    --primary-color-text:#ffffff;
+  font-family: #{$primaryFont};
+  --font-family: #{$primaryFont};
+  --surface-a: #ffffff;
+  --surface-b: #f8f9fa;
+  --surface-c: #e9ecef;
+  --surface-d: #dee2e6;
+  --surface-e: #ffffff;
+  --surface-f: #ffffff;
+  --text-color: #{$primaryTextColor};
+  --text-color-secondary: #{$secondaryTextColor};
+  --primary-color: #{$primaryColor};
+  --primary-color-text: #{$primaryTextColor};
     --surface-0: #ffffff;
     --surface-50: #FAFAFA;
     --surface-100: #F5F5F5;
@@ -68,15 +62,15 @@ $colors: (
     --content-padding:#{$panelContentPadding};
     --inline-spacing:#{$inlineSpacing};
     --border-radius:#{$borderRadius};
-    --surface-ground:#f8f9fa;
-    --surface-section:#ffffff;
-    --surface-card:#ffffff;
-    --surface-overlay:#ffffff;
-    --surface-border:#dee2e6;
-    --surface-hover:#e9ecef;
+    --surface-ground: #f8f9fa;
+    --surface-section: #ffffff;
+    --surface-card: #ffffff;
+    --surface-overlay: #ffffff;
+    --surface-border: #dee2e6;
+    --surface-hover: #e9ecef;
     --focus-ring: #{$focusShadow};
     --maskbg: #{$maskBg};
     --highlight-bg: #{$highlightBg};
     --highlight-text-color: #{$highlightTextColor};
-    color-scheme: light;
+    color-scheme: dark;
 }
