@@ -26,9 +26,14 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "generateMyTheme": "cd src/styles/themes/light && sass --no-source-map --update theme.scss:theme-light.css",
-    "moveTheme": "cd src\\styles\\themes\\light && move theme-light.css ..\\..\\..\\css\\theme-light.css",
-    "buildTheme": "npm run generateMyTheme && npm run moveTheme"
+    "generateLightTheme": "cd src/styles/themes/light && sass --no-source-map --update light.scss:theme-light.css",
+    "generateDarkTheme": "cd src/styles/themes/dark && sass --no-source-map --update dark.scss:theme-dark.css",
+    "moveThemeLight": "move src\\styles\\themes\\light\\theme-light.css src\\css\\theme-light.css",
+    "moveThemeDark": "move src\\styles\\themes\\dark\\theme-dark.css src\\css\\theme-dark.css",
+
+    "generateThemes": "npm run generateLightTheme && npm run generateDarkTheme",
+    "moveThemes": "npm run moveThemeLight && npm run moveThemeDark",
+    "buildTheme": "npm run generateThemes && npm run moveThemes"
   },
   "eslintConfig": {
     "extends": [
