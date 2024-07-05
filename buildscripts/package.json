@@ -1,0 +1,15 @@
+{
+  "name": "build-scripts",
+  "version": "1.0.0",
+  "scripts": {
+    "generateTheme": "sass --no-source-map --update ../src/styles/themes/%THEME%/%THEME%.scss:src/styles/themes/%THEME%/theme-%THEME%.css",
+    "moveTheme": "move src\\styles\\themes\\%THEME%\\theme-%THEME%.css ..\\src\\css\\theme-%THEME%.css",
+    "generateLightTheme": "set THEME=light&& npm run generateTheme",
+    "generateDarkTheme": "set THEME=dark&& npm run generateTheme",
+    "moveThemeLight": "set THEME=light&& npm run moveTheme",
+    "moveThemeDark": "set THEME=dark&& npm run moveTheme",
+    "generateThemes": "npm run generateLightTheme && npm run generateDarkTheme",
+    "moveThemes": "npm run moveThemeLight && npm run moveThemeDark && npm run remove-dir",
+    "remove-dir": "rmdir /s /q src\\"
+  }
+}

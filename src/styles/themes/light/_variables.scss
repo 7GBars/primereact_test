@@ -5,23 +5,8 @@ $primaryDarkColor: #08dfea;
 $primaryDarkerColor: #08dfea;
 $primaryTextColor: #{$primaryTextColor};
 
-$colors: (
-        "blue": #2196F3,
-        "green": #4caf50,
-        "yellow": #FBC02D,
-        "cyan": #00BCD4,
-        "pink": #E91E63,
-        "indigo": #3F51B5,
-        "teal": #009688,
-        "orange": #F57C00,
-        "bluegray": #607D8B,
-        "purple": #9C27B0,
-        "red": #FF4032,
-        "primary": $primaryColor
-);
 
 // Mandatory Designer Variables
-
 @import './variables/general';
 @import './variables/form';
 @import './variables/button';
