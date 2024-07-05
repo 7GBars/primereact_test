@@ -6,11 +6,11 @@ $primaryDarkerColor: #61B83A;
 $primaryTextColor: #{$primaryTextColor};
 
 $colors: (
-    "blue": #74A9F7,
-    "green": #61B83A,
-    "indigo": #9EA7FE,
-    "red": #C46F54,
-    "primary": $primaryColor
+        "blue": #74A9F7,
+        "green": #61B83A,
+        "indigo": #9EA7FE,
+        "red": #C46F54,
+        "primary": $primaryColor
 );
 
 // Mandatory Designer Variables
@@ -38,39 +38,39 @@ $colors: (
   --text-color-secondary: #{$secondaryTextColor};
   --primary-color: #{$primaryColor};
   --primary-color-text: #{$primaryTextColor};
-    --surface-0: #ffffff;
-    --surface-50: #FAFAFA;
-    --surface-100: #F5F5F5;
-    --surface-200: #EEEEEE;
-    --surface-300: #E0E0E0;
-    --surface-400: #BDBDBD;
-    --surface-500: #9E9E9E;
-    --surface-600: #757575;
-    --surface-700: #616161;
-    --surface-800: #424242;
-    --surface-900: #212121;
-    --gray-50: #FAFAFA;
-    --gray-100: #F5F5F5;
-    --gray-200: #EEEEEE;
-    --gray-300: #E0E0E0;
-    --gray-400: #BDBDBD;
-    --gray-500: #9E9E9E;
-    --gray-600: #757575;
-    --gray-700: #616161;
-    --gray-800: #424242;
-    --gray-900: #212121;
-    --content-padding:#{$panelContentPadding};
-    --inline-spacing:#{$inlineSpacing};
-    --border-radius:#{$borderRadius};
-    --surface-ground: #f8f9fa;
-    --surface-section: #ffffff;
-    --surface-card: #ffffff;
-    --surface-overlay: #ffffff;
-    --surface-border: #dee2e6;
-    --surface-hover: #e9ecef;
-    --focus-ring: #{$focusShadow};
-    --maskbg: #{$maskBg};
-    --highlight-bg: #{$highlightBg};
-    --highlight-text-color: #{$highlightTextColor};
-    color-scheme: dark;
+  --surface-0: #ffffff;
+  --surface-50: #FAFAFA;
+  --surface-100: #F5F5F5;
+  --surface-200: #EEEEEE;
+  --surface-300: #E0E0E0;
+  --surface-400: #BDBDBD;
+  --surface-500: #9E9E9E;
+  --surface-600: #757575;
+  --surface-700: #616161;
+  --surface-800: #424242;
+  --surface-900: #212121;
+  --gray-50: #FAFAFA;
+  --gray-100: #F5F5F5;
+  --gray-200: #EEEEEE;
+  --gray-300: #E0E0E0;
+  --gray-400: #BDBDBD;
+  --gray-500: #9E9E9E;
+  --gray-600: #757575;
+  --gray-700: #616161;
+  --gray-800: #424242;
+  --gray-900: #212121;
+  --content-padding: #{$panelContentPadding};
+  --inline-spacing: #{$inlineSpacing};
+  --border-radius: #{$borderRadius};
+  --surface-ground: #f8f9fa;
+  --surface-section: #ffffff;
+  --surface-card: #ffffff;
+  --surface-overlay: #ffffff;
+  --surface-border: #dee2e6;
+  --surface-hover: #e9ecef;
+  --focus-ring: #{$focusShadow};
+  --maskbg: #{$maskBg};
+  --highlight-bg: #{$highlightBg};
+  --highlight-text-color: #{$highlightTextColor};
+  color-scheme: dark;
 }
