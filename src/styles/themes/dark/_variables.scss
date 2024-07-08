@@ -1,9 +1,7 @@
-@import './fonts';
-
 $primaryColor: #61B83A;
 $primaryDarkColor: #61B83A;
 $primaryDarkerColor: #61B83A;
-$primaryTextColor: #{$primaryTextColor};
+
 
 $colors: (
         "blue": #74A9F7,
@@ -26,18 +24,18 @@ $colors: (
 @import './variables/_misc';
 
 :root {
-  font-family: #{$primaryFont};
-  --font-family: #{$primaryFont};
+  font-family: #{$fontFamily};
+  --font-family: #{$fontFamily};
   --surface-a: #ffffff;
   --surface-b: #f8f9fa;
   --surface-c: #e9ecef;
   --surface-d: #dee2e6;
   --surface-e: #ffffff;
   --surface-f: #ffffff;
-  --text-color: #{$primaryTextColor};
-  --text-color-secondary: #{$secondaryTextColor};
+  --text-color: #{$textColor};
+  --text-color-secondary: #{$textSecondaryColor};
   --primary-color: #{$primaryColor};
-  --primary-color-text: #{$primaryTextColor};
+  --primary-color-text: #{$textSecondaryColor};
   --surface-0: #ffffff;
   --surface-50: #FAFAFA;
   --surface-100: #F5F5F5;
