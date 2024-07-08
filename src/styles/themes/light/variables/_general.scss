@@ -1,11 +1,11 @@
 @import '../../common-variables/general';
 /// Primary text color
 /// @group general
-$textColor: #FFFFFF;
+$textColor: $themeTextColor;
 
 /// Secondary text color
 /// @group general
-$textSecondaryColor: #888888;
+$textSecondaryColor: $themeTextSecondaryColor;
 
 /// Background of a highlighted item
 /// @group general

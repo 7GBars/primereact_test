@@ -1,7 +1,13 @@
+/// Основной цвет темы (например фон кнопок )
 $primaryColor: #61B83A;
-$primaryDarkColor: #61B83A;
-$primaryDarkerColor: #61B83A;
+$primaryDarkColor: #3e7b23;
+$primaryDarkerColor: #284817;
 
+$themeTextColor: #FFFFFF;
+$themeTextSecondaryColor: #888888;
+
+/// Цвет текста - когда для элементов у которых цвет фона равняется $primaryColor
+$primaryTextColor: #2F83FB;
 
 $colors: (
         "blue": #74A9F7,
