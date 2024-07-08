@@ -1,12 +1,14 @@
 /// Основной цвет темы (например фон кнопок )
-$primaryColor: #3a5eb8;
+$primaryColor: #285ce0;
 $primaryDarkColor: #152246;
 $primaryDarkerColor: #060e1f;
 
 $themeTextColor: #484848;
 $themeTextSecondaryColor: #888888;
+
 /// Цвет текста - когда для элементов у которых цвет фона равняется $primaryColor
 $primaryTextColor: $themeTextColor;
+$activeTextColor: #2F83FB;
 
 $colors: (
         "blue": #74A9F7,
@@ -29,6 +31,7 @@ $colors: (
 @import './variables/_misc';
 
 :root {
+  background-color: #323232;
   font-family: #{$fontFamily};
   --font-family: #{$fontFamily};
   --surface-a: #ffffff;
