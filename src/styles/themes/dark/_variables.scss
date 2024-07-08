@@ -7,7 +7,7 @@ $themeTextColor: #FFFFFF;
 $themeTextSecondaryColor: #888888;
 
 /// Цвет текста - когда для элементов у которых цвет фона равняется $primaryColor
-$primaryTextColor: #2F83FB;
+$primaryTextColor: $themeTextColor;
 
 $colors: (
         "blue": #74A9F7,
