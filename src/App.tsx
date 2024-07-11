@@ -5,9 +5,10 @@ import {TieredMenu} from "primereact/tieredmenu";
 
 import {TieredMenuTest} from "./components/TieredMenu/index";
 import {items} from "./__mocksData__/";
+import {InputText} from "primereact/inputtext";
 
 import './App.css';
-import { PrimeIcons } from 'primereact/api';
+
 
 
 
@@ -19,6 +20,11 @@ function App() {
       <TieredMenuTest model={items} instanceRefObject={tieredMenuInstance}/>
       <h1>2</h1>
       <p>dome text</p>
+
+      <div className={'card'}>
+        text
+      </div>
+      <InputText keyfilter="int" placeholder="Integers" />
     </div>
   );
 }
