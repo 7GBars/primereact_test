@@ -8,6 +8,7 @@ import {items} from "./__mocksData__/";
 import {InputText} from "primereact/inputtext";
 
 import './App.css';
+import {Password} from "primereact/password";
 
 
 
@@ -25,6 +26,7 @@ function App() {
         text
       </div>
       <InputText keyfilter="int" placeholder="Integers" />
+      <Password value={'as'} toggleMask />
     </div>
   );
 }
