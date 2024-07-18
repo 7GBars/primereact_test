@@ -1,15 +1,19 @@
+import 'reflect-metadata';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { container } from 'tsyringe';
-import EmailService from './services/EmailService';
-import NotificationService from './services/NotificationService';
+import {RegisterService} from "./services/serviceRegistrator";
 
 import 'primeflex/primeflex.css';
 import './css/theme-light.css';
 import 'primeicons/primeicons.css';
+import {DIProvider} from "./contexts/DIContext";
+
+
+RegisterService();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -18,7 +22,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App />
+    <DIProvider>
+      <App />
+    </DIProvider>
   </React.StrictMode>
 );
 

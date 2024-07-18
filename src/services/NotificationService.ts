@@ -1,5 +1,6 @@
+import 'reflect-metadata';
 import { inject, injectable } from 'tsyringe';
-import EmailService from './EmailService';
+import { EmailService } from './EmailService';
 @injectable()
 class NotificationService {
   constructor(
