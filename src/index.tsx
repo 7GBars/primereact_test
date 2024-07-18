@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { container } from 'tsyringe';
+import EmailService from './services/EmailService';
+import NotificationService from './services/NotificationService';
 
 import 'primeflex/primeflex.css';
 import './css/theme-light.css';
@@ -11,6 +14,8 @@ import 'primeicons/primeicons.css';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+
 root.render(
   <React.StrictMode>
     <App />
