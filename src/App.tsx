@@ -14,8 +14,11 @@ import './App.css';
 
 
 
+import {test} from './services/test';
+
 
 function App() {
+  test()
   const tieredMenuInstance = useRef<TieredMenu>(null);
   const container = useDIContainer();
   const emailService = container.resolve<EmailService>('EmailService');
