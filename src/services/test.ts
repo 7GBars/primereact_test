@@ -1,9 +1,8 @@
+import 'reflect-metadata';
 import { container, singleton, injectable, inject } from 'tsyringe';
-
 
 export const test = () => {
 
-// Example services with dependencies
   @singleton()
   class ApiService {
     getData(): Promise<any> {
@@ -19,20 +18,12 @@ export const test = () => {
     }
   }
 
-// Example component that uses services with dependency injection
   @injectable()
   class Services {
-    private apiService: ApiService;
-    private loggerService: LoggerService;
-
     constructor(
-
-      @inject('ApiService') apiService: ApiService,
-      @inject('LoggerService') loggerService: LoggerService
-    ) {
-      this.apiService = apiService;
-      this.loggerService = loggerService;
-    }
+      @inject('ApiService') private apiService: ApiService,
+      @inject('LoggerService') private loggerService: LoggerService
+    ) {}
 
     fetchData(): void {
       this.apiService.getData()
@@ -45,14 +36,14 @@ export const test = () => {
     }
   }
 
-// Registering dependencies
-  container.register('ApiService', {useClass: ApiService});
-  container.register('LoggerService', {useClass: LoggerService});
-  container.register('Services', {useClass: Services});
+  // Registering dependencies
+  container.registerSingleton<ApiService>('ApiService', ApiService);
+  container.registerSingleton<LoggerService>('LoggerService', LoggerService);
+  container.registerSingleton<Services>('Services', Services);
 
-// Resolving the component from the container
+  // Resolving the component from the container
   const myComponent = container.resolve<Services>('Services');
 
-// Using the resolved component
+  // Using the resolved component
   myComponent.fetchData();
 }
