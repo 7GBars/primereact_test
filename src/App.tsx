@@ -9,7 +9,7 @@ import {InputText} from "primereact/inputtext";
 import {Password} from "primereact/password";
 import {EmailService} from "./services/EmailService";
 import {useDIContainer} from "./contexts/DIContext";
-
+import {MyStepper} from './components/Stepper'
 import './App.css';
 
 
@@ -17,8 +17,9 @@ import './App.css';
 import {test} from './services/test';
 
 
+
 function App() {
-  test()
+
   const tieredMenuInstance = useRef<TieredMenu>(null);
   const container = useDIContainer();
   const emailService = container.resolve<EmailService>('EmailService');
@@ -36,8 +37,7 @@ function App() {
       <div className={'card'}>
         text
       </div>
-      <InputText keyfilter="int" placeholder="Integers" />
-      <Password value={'as'} toggleMask />
+      <MyStepper/>
     </div>
   );
 }

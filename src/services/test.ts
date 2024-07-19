@@ -21,17 +21,17 @@ export const test = () => {
   @injectable()
   class Services {
     constructor(
-      @inject('ApiService') private apiService: ApiService,
-      @inject('LoggerService') private loggerService: LoggerService
+      @inject('ApiService') private apiService?: ApiService,
+      @inject('LoggerService') private loggerService?: LoggerService
     ) {}
 
     fetchData(): void {
-      this.apiService.getData()
+      this.apiService?.getData()
         .then((data) => {
           // Handle the data
         })
         .catch((error) => {
-          this.loggerService.log(`Error: ${error}`);
+          this.loggerService?.log(`Error: ${error}`);
         });
     }
   }
