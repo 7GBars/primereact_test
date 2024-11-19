@@ -1,0 +1,31 @@
+export const htmlDataContent = '<!DOCTYPE html>\n' +
+  '<html lang="en">\n' +
+  '<head>\n' +
+  '    <meta charset="UTF-8">\n' +
+  '    <title>Title</title>\n' +
+  '    <style>\n' +
+  '      h1 {\n' +
+  '        color: #333;\n' +
+  '        font-size: 24px;\n' +
+  '      }\n' +
+  '      .big {\n' +
+  '        font-size: 200px;\n' +
+  '      }\n' +
+  '    </style>\n' +
+  '</head>\n' +
+  '<body>\n' +
+  '   <div class="big">\n' +
+  '       data\n' +
+  '   </div>\n' +
+  '   <h1>Test</h1>\n' +
+  '   <style>\n' +
+  '     h1 {\n' +
+  '       color: #333;\n' +
+  '       font-size: 24px;\n' +
+  '     }\n' +
+  '     .big {\n' +
+  '       font-size: 200px;\n' +
+  '     }\n' +
+  '   </style>\n' +
+  '</body>\n' +
+  '</html>';
