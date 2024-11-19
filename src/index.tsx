@@ -9,7 +9,7 @@ import {RegisterService} from "./services/serviceRegistrator";
 
 import 'primeflex/primeflex.css';
 import './css/theme-light.css';
-import 'primeicons/primeicons.css';
+
 import {DIProvider} from "./contexts/DIContext";
 
 
