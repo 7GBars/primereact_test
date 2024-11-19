@@ -28,16 +28,7 @@ function App() {
   };
   return (
     <div className="App">
-      <Button icon={'pi pi-check'} label="Show" onClick={(e) => tieredMenuInstance.current?.toggle(e)}/>
-      <Button icon={'pi pi-check'} label="Show" onClick={(e) => handleClick()}/>
-      <TieredMenuTest model={items} instanceRefObject={tieredMenuInstance}/>
-      <h1>2</h1>
-      <p>dome text</p>
-
-      <div className={'card'}>
-        text
-      </div>
-      <MyStepper/>
+      <TieredMenuTest model={[{label: '2', }]} instanceRefObject={test} />
     </div>
   );
 }
