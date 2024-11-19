@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {useRef} from "react";
 import { Button } from 'primereact/button';
 import {TieredMenu} from "primereact/tieredmenu";
@@ -15,20 +15,18 @@ import './App.css';
 
 
 import {test} from './services/test';
+import { HTMLEditor } from "./components/Editor";
 
 
 
 function App() {
 
-  const tieredMenuInstance = useRef<TieredMenu>(null);
   const container = useDIContainer();
   const emailService = container.resolve<EmailService>('EmailService');
-  const handleClick = () => {
-    emailService.sendEmail('Hello from SomeComponent!');
-  };
+
   return (
     <div className="App">
-      <TieredMenuTest model={[{label: '2', }]} instanceRefObject={test} />
+      <HTMLEditor />
     </div>
   );
 }

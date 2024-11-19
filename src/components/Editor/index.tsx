@@ -1,5 +1,5 @@
-import React from 'react';
-import { Editor, EditorProps } from "primereact/editor";
+import React, { useState } from 'react';
+import { Editor, EditorProps, EditorTextChangeEvent } from "primereact/editor";
 
 import './index.scss'
 
@@ -7,10 +7,10 @@ import './index.scss'
 type THTMLEditorProps = EditorProps;
 
 export const HTMLEditor: React.FC<THTMLEditorProps> = (props) => {
-
+  const [value, setValue] = useState<string>('');
   return (
     <div className={'html-editor-container'}>
-      <Editor {...props}/>
+      <Editor {...props} value={value} onTextChange={(e: EditorTextChangeEvent) => setValue(e.htmlValue as string)}/>
     </div>
   );
 }
