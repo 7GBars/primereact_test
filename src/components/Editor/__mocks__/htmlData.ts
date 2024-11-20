@@ -3,7 +3,7 @@ export const htmlDataContent = "<!DOCTYPE html>\n" +
   "<head>\n" +
   "    <style>\n" +
   "      h1 {\n" +
-  "        color: #333;\n" +
+  "        color: red;\n" +
   "        font-size: 24px;\n" +
   "      }\n" +
   "      .big {\n" +
