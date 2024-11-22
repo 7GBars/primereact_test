@@ -1,35 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Editor, EditorProps, EditorTextChangeEvent } from "primereact/editor";
+import juice from "juice";
+import Quill from 'quill';
 
 import './index.scss'
 import { htmlDataContent } from "./__mocks__/htmlData";
 
 
+
 type THTMLEditorProps = EditorProps;
 
 export const HTMLEditor: React.FC<THTMLEditorProps> = (props) => {
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string>(juice(htmlDataContent));
+  const editorRef = useRef<any>(null); // Ссылка на Editor
 
-  useEffect(() => {
-    // Извлечение стилей из htmlDataContent
-    const styleMatch = htmlDataContent.match(/<style[^>]*>([\s\S]*?)<\/style>/);
 
-    if (styleMatch && styleMatch[1]) {
-      console.log('styleMatch', styleMatch[1])
 
-      const styleElement = document.createElement('style');
-      styleElement.textContent = styleMatch[1];
-      document.head.appendChild(styleElement);
+  const test = ' <div class="big" style="font-size: 200px;">as</div>'
+  const test2 = ' <div class="big" style="color: red;">as</div>'
+  const test3 = ' <div class="big" style="border: 1px solid red;" dangerouslySetInnerHTML={{__html: test2}}>as</div>'
 
-      return () => {
-        // Удаляем стили при размонтировании компоненты
-        document.head.removeChild(styleElement);
-      };
-    }
-  }, []);
+
   return (
     <div className={'html-editor-container'}>
-      <Editor {...props} value={htmlDataContent} onTextChange={(e: EditorTextChangeEvent) => setValue(e.htmlValue as string)}/>
+      <Editor
+        ref={editorRef}
+        value={test3}
+        onTextChange={(e: EditorTextChangeEvent) => setValue(e.htmlValue as string)}
+      />
     </div>
   );
 }
