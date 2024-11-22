@@ -1,8 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { Editor, EditorProps } from "primereact/editor";
 import Quill from 'quill';
-import './index.scss';
 import { htmlDataContent } from "./__mocks__/htmlData";
+
+import './index.scss';
+
 
 // Подключаем атрибуты для Quill
 const QuillAttributor = Quill.import('parchment').Attributor;
