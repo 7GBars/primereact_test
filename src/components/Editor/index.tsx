@@ -1,67 +1,50 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Editor, EditorProps, EditorTextChangeEvent } from "primereact/editor";
-import juice from "juice";
+import React, { useRef, useState } from 'react';
+import { Editor, EditorProps } from "primereact/editor";
 import Quill from 'quill';
-
-import './index.scss'
+import './index.scss';
 import { htmlDataContent } from "./__mocks__/htmlData";
-import { Button } from "primereact/button";
-import { Simulate } from "react-dom/test-utils";
-import load = Simulate.load;
 
+// Подключаем атрибуты для Quill
+const QuillAttributor = Quill.import('parchment').Attributor;
 
+// Добавляем атрибуты `class` и `style`
+const ClassAttributor = new QuillAttributor('class', 'class', {
+  scope: Quill.import('parchment').Scope.BLOCK,
+});
+const StyleAttributor = new QuillAttributor('style', 'style', {
+  scope: Quill.import('parchment').Scope.BLOCK,
+});
+
+// Регистрируем атрибуты
+Quill.register(ClassAttributor, true);
+Quill.register(StyleAttributor, true);
 
 type THTMLEditorProps = EditorProps;
 
-// Расширяем Quill для поддержки кастомных классов
-// Расширяем Quill для поддержки кастомных классов
-
-
-const Block: any = Quill.import('blots/block');
-
-class CustomBlock extends Block {
-  static blotName = 'custom';
-  static tagName = 'div';
-
-  static formats(domNode: HTMLElement) {
-    return domNode.getAttribute('class');
-  }
-
-  format(name: string, value: any) {
-    if (name === 'class' && value) {
-      (this.domNode as HTMLElement).setAttribute('class', value);
-    } else {
-      super.format(name, value);
-    }
-  }
-}
-
-Quill.register(CustomBlock as any);
-
-
-
-export const HTMLEditor: React.FC<THTMLEditorProps> = (props) => {
-  const [value, setValue] = useState<string>(juice(htmlDataContent));
-  const editorRef = useRef<Editor>(null); // Ссылка на Editor
+export const HTMLEditor: React.FC<THTMLEditorProps> = () => {
+  const [value, setValue] = useState<string>(htmlDataContent);
+  const editorRef = useRef<Editor>(null);
 
   const htmlTemplate = `
-<div style="font-size: 24px;" class="big">Hello, World!</div>
-`;
+    <div style="font-size: 24px;" class="big">Hello, World!</div>
+  `;
 
-  const setQuillContent = (quill: any) => {
-    const quillFromEditorInstance = editorRef.current?.getQuill();
-    quillFromEditorInstance.clipboard.dangerouslyPasteHTML(htmlTemplate);
+  const setQuillContent = () => {
+    const quillInstance = editorRef.current?.getQuill();
+    if (quillInstance) {
+      quillInstance.clipboard.dangerouslyPasteHTML(htmlTemplate);
+    }
   };
 
-
   return (
-    <div className={'html-editor-container'}>
+    <div className="html-editor-container">
       <Editor
-        onLoad={setQuillContent}
         ref={editorRef}
-
+        style={{ height: '300px' }}
+        onLoad={(quill) => {
+          setQuillContent()
+        }}
       />
     </div>
   );
-}
-
+};
