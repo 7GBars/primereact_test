@@ -13,6 +13,33 @@ import load = Simulate.load;
 
 type THTMLEditorProps = EditorProps;
 
+// Расширяем Quill для поддержки кастомных классов
+// Расширяем Quill для поддержки кастомных классов
+
+
+const Block: any = Quill.import('blots/block');
+
+class CustomBlock extends Block {
+  static blotName = 'custom';
+  static tagName = 'div';
+
+  static formats(domNode: HTMLElement) {
+    return domNode.getAttribute('class');
+  }
+
+  format(name: string, value: any) {
+    if (name === 'class' && value) {
+      (this.domNode as HTMLElement).setAttribute('class', value);
+    } else {
+      super.format(name, value);
+    }
+  }
+}
+
+Quill.register(CustomBlock as any);
+
+
+
 export const HTMLEditor: React.FC<THTMLEditorProps> = (props) => {
   const [value, setValue] = useState<string>(juice(htmlDataContent));
   const editorRef = useRef<Editor>(null); // Ссылка на Editor
