@@ -5,11 +5,11 @@ export const htmlDataContent = "<!DOCTYPE html>\n" +
   "<head>\n" +
   "    <style>\n" +
   "      h1 {\n" +
-  "        color: #333!important;\n" +
+  "        color: red!important;\n" +
   "        font-size: 24px;\n" +
   "      }\n" +
   "      .big {\n" +
-  "        font-size: 200px;\n" +
+  "        font-size: 40px;\n" +
   "      }\n" +
   "    </style>\n" +
   "</head>\n" +
@@ -18,10 +18,10 @@ export const htmlDataContent = "<!DOCTYPE html>\n" +
   "       data\n" +
   "   </div>\n" +
   "   <h1>Test</h1>\n" +
-  "   <p class=\"big\" style=\"font-size: 200px;\">\n" +
+  "   <p class=\"big\" >\n" +
   "       data\n" +
   "   </p>\n" +
-  "   <h1 style=\"color: red; font-size: 24px;\">Test</h1>\n" +
+  "   <h1>Test</h1>\n" +
   "</body>\n" +
   "</html>"
 
