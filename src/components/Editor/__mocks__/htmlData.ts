@@ -21,7 +21,6 @@ export const htmlDataContent = "<!DOCTYPE html>\n" +
   "   <p class=\"big\" >\n" +
   "       data\n" +
   "   </p>\n" +
-  "   <h1>Test</h1>\n" +
   "</body>\n" +
   "</html>"
 

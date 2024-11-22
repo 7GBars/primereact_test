@@ -67,7 +67,9 @@ export const HTMLEditor: React.FC<THTMLEditorProps> = () => {
     if (quillInstance) {
       quillInstance.clipboard.dangerouslyPasteHTML(juice(htmlDataContent));
     }
+    quillInstance.getModule('toolbar').container.style.display = 'none';
   };
+
 
   return (
     <div className="html-editor-container">
@@ -77,6 +79,8 @@ export const HTMLEditor: React.FC<THTMLEditorProps> = () => {
         onLoad={(quill) => {
           setQuillContent()
         }}
+        readOnly={true}
+
       />
     </div>
   );
