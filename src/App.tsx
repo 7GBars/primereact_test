@@ -16,6 +16,7 @@ import './App.css';
 
 import {test} from './services/test';
 import { HTMLEditor } from "./components/Editor";
+import { htmlTemplate, htmlTemplateWithHeader } from "./components/Editor/__mocks__/htmlData";
 
 
 
@@ -26,7 +27,10 @@ function App() {
 
   return (
     <div className="App">
-      <HTMLEditor />
+      <HTMLEditor
+        defaultValue={htmlTemplateWithHeader}
+        showHeader={false}
+      />
     </div>
   );
 }

@@ -11,9 +11,12 @@ import 'primeflex/primeflex.css';
 import './css/theme-light.css';
 
 import {DIProvider} from "./contexts/DIContext";
+import { configureQuill } from "./quillConfig";
 
 
 RegisterService();
+configureQuill();
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

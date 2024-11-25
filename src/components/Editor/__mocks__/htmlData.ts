@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const htmlDataContent = "<!DOCTYPE html>\n" +
+export const htmlTemplateWithHeader = "<!DOCTYPE html>\n" +
   "<html lang=\"en\">\n" +
   "<head>\n" +
   "    <style>\n" +
@@ -23,6 +23,13 @@ export const htmlDataContent = "<!DOCTYPE html>\n" +
   "   </p>\n" +
   "</body>\n" +
   "</html>"
+
+
+export const htmlTemplate = `
+    <div style="font-size: 12px; color: red" class="big">Hello, World!</div>
+    <span style="font-size: 24px; color: red" class="big">Test</span>
+`;
+
 
 const useStyles = (htmlDataContent: string) => {
   useEffect(() => {
