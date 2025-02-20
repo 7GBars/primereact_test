@@ -3,11 +3,12 @@ import { Editor, EditorProps } from "primereact/editor";
 import juice from "juice";
 
 import './index.scss';
+import { QuillEditor } from "./QuillWrapper";
 
 type THTMLEditorProps = EditorProps;
 
-export const HTMLEditor: React.FC<THTMLEditorProps> = ({
-  defaultValue, showHeader, readOnly, onLoad,
+export const HTMLEditor: React.FC<THTMLEditorProps & { native: boolean }> = ({
+  defaultValue, showHeader, readOnly, onLoad, native
 }) => {
   const editorRef = useRef<Editor>(null);
 
@@ -22,14 +23,18 @@ export const HTMLEditor: React.FC<THTMLEditorProps> = ({
 
   return (
     <div className="html-editor-container">
-      <Editor
-        ref={editorRef}
-        style={{ height: '300px' }}
-        onLoad={(quill) => {
-          setQuillContent()
-        }}
-        readOnly={readOnly}
-      />
+      {
+        !native
+          ? <Editor
+            ref={editorRef}
+            style={{ height: '300px' }}
+            onLoad={(quill) => {
+              setQuillContent()
+            }}
+            readOnly={readOnly}
+          />
+          : <QuillEditor value={defaultValue as string} onChange={(e) => console.log(e)}/>
+      }
     </div>
   );
 };
