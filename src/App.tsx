@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { EmailService } from "./services/EmailService";
 import { useDIContainer } from "./contexts/DIContext";
 import { HTMLEditor } from "./components/Editor";
 import { htmlTemplateWithTables } from "./components/Editor/__mocks__/htmlData";
+import { QuillEditor } from "./components/Editor/QuillWrapper";
+import { WrappedTree } from "./components/Tree";
+import type { Tree } from "primereact/tree";
 
 import './App.css';
-import { QuillEditor } from "./components/Editor/QuillWrapper";
+
 
 function App() {
-
-  const container = useDIContainer();
-  const emailService = container.resolve<EmailService>('EmailService');
+  const treeRef = useRef<Tree | null>(null);
 
   return (
     <div className="App">
-
-      <QuillEditor value={'table'} onChange={(e) => console.log(e)}/>
+      <WrappedTree ref={treeRef}/>
     </div>
   );
 }
